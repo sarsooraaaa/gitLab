@@ -1,0 +1,14 @@
+name: CI 
+
+on: push
+
+jobs:
+    check:
+        runs-on: ubuntu-latest
+        steps:
+            - name: say hello
+              run: echo "Hello from github actions"
+            - name: get the code
+              uses: actions/checkout@v7
+            - name: list the files
+              run: ls
