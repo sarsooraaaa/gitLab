@@ -1,0 +1,25 @@
+
+name: CI
+
+on: push
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+
+      - name: Say hello
+        run: echo "Hello from GitHub Actions"
+
+      - name: List the files
+        run: ls -la
+
+      - name: Check home page has a heading
+        run: grep -q "<h1>" labquiz1/index.html
+      
+      - name: goodbye 
+        run: echo "Goodbye from GitHub Actions"
